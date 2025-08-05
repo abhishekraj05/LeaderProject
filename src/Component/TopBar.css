@@ -1,0 +1,72 @@
+.top-bar {
+  background-color: #2cab39;
+  color: white;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: sans-serif;
+  flex-wrap: wrap;
+}
+
+.top-bar .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.top-bar .left button {
+  background: none;
+  border: none;
+  color: orangered;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 6px;
+}
+
+.top-bar .left img {
+  margin-right: 2px;
+  height: 16px;
+  width: auto;
+}
+
+.top-bar .right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+
+/* ✅ Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+
+  .top-bar .right {
+    margin-top: 5px;
+    font-size: 13px;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-bar .left {
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .top-bar .left button {
+    font-size: 13px;
+  }
+}
