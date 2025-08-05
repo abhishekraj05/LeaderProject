@@ -1,6 +1,18 @@
 // FutureDevelopmentArea.jsx
 import React from 'react';
-import './FutureDevelopmentArea.css';
+import Economy from "../../assets/Economy.png"
+import EconomyImg from "../../assets/EconomyImg.jpg"
+import Agriculture from "../../assets/Agriculture.png"
+import AgricultureImg from "../../assets/AgricultureImg.jpg"
+import Water from "../../assets/Water.png"
+import WaterImg from "../../assets/WaterImg.jpg"
+import Education from "../../assets/Education.png"
+import EducationImg from "../../assets/EducationImg.jpg"
+import Health from "../../assets/Health.png"
+import HealthImg from "../../assets/HealthImg.jpg"
+import Electricity from "../../assets/Electricity.png"
+import Electricityimg from "../../assets/ElectricityImg.jpg"
+import  './FutureDevelopmentArea.css';
 
 const Card = ({ image, icon, title, description }) => {
   return (
@@ -19,53 +31,53 @@ const Card = ({ image, icon, title, description }) => {
 const FutureDevelopmentArea = () => {
   const data = [
     {
-      title: 'आर्थिक विकास',
-      image: 'https://i.imgur.com/0OZniRa.jpg',
-      icon: 'https://i.imgur.com/Nzh2abG.png',
+      title: 'अर्थव्यवस्था',
+      image: EconomyImg,
+      icon: Economy,
       description:
-        'अत्यधिक कर चोरी है। जटिल कर प्रणाली इस चोरी को छुपाने के लिए एक आदर्श परदा बन जाती है।'
+        'ज़रूरत से ज़्यादा कर लगाना चोरी है। एक जटिल कर व्यवस्था इस चोरी को आसान बनाने के लिए एक बेहतरीन आवरण है और इसे हम पर थोपा गया है...'
     },
     {
       title: 'कृषि',
-      image: 'https://i.imgur.com/8OKlSNJ.jpg',
-      icon: 'https://i.imgur.com/jXZOhPe.png',
+      image: AgricultureImg,
+      icon: Agriculture,
       description:
-        '50% लाभ सुनिश्चित करके कृषि में लाभप्रदता बढ़ाने के लिए कदम उठाए जाएंगे, साथ ही सस्ती इनपुट सुविधा भी दी जाएगी।'
+        'उत्पादन लागत पर न्यूनतम 50% लाभ सुनिश्चित करके, सस्ती कृषि इनपुट उपलब्ध कराकर कृषि में लाभप्रदता बढ़ाने के लिए कदम उठाएं...'
     },
     {
-      title: 'पेयजल',
-      image: 'https://i.imgur.com/06IyfY5.jpg',
-      icon: 'https://i.imgur.com/QgtYdmq.png',
+      title: 'पानी',
+      image: WaterImg,
+      icon:Water ,
       description:
-        'बारिश आधारित क्षेत्रों में विकास और किसानों की आय बढ़ाने के लिए एक बड़ी राशि आरक्षित की जाएगी।'
+        'वर्षा आधारित क्षेत्रों में भूमि विकास और किसानों की आय बढ़ाने तथा आरओ संयंत्र उपलब्ध कराने के लिए प्रति वर्ष एक बड़ी राशि निर्धारित की जाएगी।'
     },
     {
       title: 'शिक्षा',
-      image: 'https://i.imgur.com/6PRPbhn.jpg',
-      icon: 'https://i.imgur.com/Sdk0KvG.png',
+      image: EducationImg,
+      icon: Education,
       description:
-        'आज की जटिल दुनिया की चुनौतियों से निपटने के लिए वैज्ञानिक दृष्टिकोण के साथ योग्य युवाओं को तैयार करना।'
+        'वैज्ञानिक स्वभाव को आत्मसात करके जटिल आधुनिक विश्व की चुनौतियों से निपटने के लिए एक कुशल युवा को तैयार करना...'
     },
     {
       title: 'स्वास्थ्य',
-      image: 'https://i.imgur.com/sRPoHZU.jpg',
-      icon: 'https://i.imgur.com/zrEz9ne.png',
+      image: HealthImg,
+      icon: Health,
       description:
-        'गरीबों के लिए CT स्कैन, MRI और अल्ट्रासाउंड जैसी सेवाओं के साथ 24x7 मुफ्त डायग्नोस्टिक केंद्र उपलब्ध कराए जाएंगे।'
+        'निजी-सार्वजनिक योजना के तहत हर अस्पताल में गरीबों के लिए सीटी स्कैन, एमआरआई और अल्ट्रासाउंड सुविधाओं के साथ 24 घंटे मुफ्त डायग्नोस्टिक सेंटर चलाए जाएंगे।'
     },
     {
       title: 'बिजली',
-      image: 'https://i.imgur.com/BGy7jRv.jpg',
-      icon: 'https://i.imgur.com/JzJ4jFf.png',
+      image: Electricityimg,
+      icon: Electricity,
       description:
-        'हमारा वादा है कि शहरी क्षेत्रों में 100% और ग्रामीण क्षेत्रों में 90% तक बिजली की पहुंच बढ़ाई जाएगी।'
+        'हमारे घोषणापत्र में शहरी क्षेत्रों में ऊर्जा की पहुँच को 100 प्रतिशत और ग्रामीण क्षेत्रों में 90 प्रतिशत तक बढ़ाने का वादा किया गया है। वर्तमान में, 94 प्रतिशत...'
     }
   ];
 
   return (
     <section className="future-container">
       <h2>
-        भविष्य का <span>विकास क्षेत्र</span>
+        भविष्य का <span >विकास क्षेत्र</span>
       </h2>
       <div className="future-grid">
         {data.map((item, index) => (
