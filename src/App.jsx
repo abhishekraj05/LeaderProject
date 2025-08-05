@@ -1,17 +1,11 @@
-<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GalleryPage from './Component/Galary/GalleryPage';
 import GalleryPhotos from './Component/Galary/GalleryPhotos';
-import FutureDevelopmentArea from './Component/Home/FutureDevelopmentArea';
 import './App.css';
-=======
-import './App.css'
-import HomePage from './Component/Home/HomePage'
->>>>>>> c26ab570cfc2f9de2551bb109e5016c549314077
+import HomePage from "./Component/Home/HomePage";
 
 function App() {
   return (
-<<<<<<< HEAD
     <Router>
       <Routes>
         {/* Home Route */}
@@ -19,7 +13,7 @@ function App() {
           path="/"
           element={
             <>
-              <FutureDevelopmentArea />
+              <HomePage />
               {/* You can add more sections here if needed */}
             </>
           }
@@ -33,12 +27,6 @@ function App() {
       </Routes>
     </Router>
   );
-=======
-    <>
-    <HomePage/>
-    </>
-  )
->>>>>>> c26ab570cfc2f9de2551bb109e5016c549314077
 }
 
 export default App;

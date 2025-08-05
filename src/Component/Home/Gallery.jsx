@@ -7,12 +7,12 @@ import 'swiper/css/autoplay';
 import SwiperCore, { Autoplay, Navigation, Thumbs } from 'swiper';
 
 import './Gallery.css';
-import image1 from '../../assets/AgricultureImg.jpg';
-import image2 from '../../assets/WaterImg.jpg';
-import image3 from '../../assets/HealthImg.jpg';
-import image4 from '../../assets/WaterImg.jpg';
-import image5 from '../../assets/HealthImg.jpg';
-import image6 from '../../assets/ElectricityImg.jpg';
+import image1 from '../../assets/p7.jpg';
+import image2 from '../../assets/p2.jpg';
+import image3 from '../../assets/p3.jpg';
+import image4 from '../../assets/p4.jpg';
+import image5 from '../../assets/p5.jpg';
+import image6 from '../../assets/p6.jpg';
 
 SwiperCore.use([Autoplay, Navigation, Thumbs]);
 
