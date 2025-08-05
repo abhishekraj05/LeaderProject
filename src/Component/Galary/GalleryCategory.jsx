@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { galleryData } from "./galleryData";
+import GalleryBanner from "./GalleryBanner";
 import "./GalleryCategory.css";
 
 const GalleryCategory = () => {
@@ -11,21 +12,25 @@ const GalleryCategory = () => {
   };
 
   return (
-    <div className="___pg__wrapper">
-      <h2 className="___pg__title">Gallery Categories</h2>
-      <div className="___pg__card-grid">
+    <>
+     <GalleryBanner /> 
+    <div className="gallery-wrapper">
+      <h2 className="gallery-title">Media <strong>Gallery</strong></h2>
+      <div className="gallery-grid">
         {galleryData.map((category) => (
           <div
             key={category.id}
-            className="___pg__card"
+            className="gallery-card"
             onClick={() => handleClick(category.id)}
           >
-            <img src={category.coverImage} alt={category.title} />
-            <div className="___pg__card-title">{category.title}</div>
+            <img src={category.coverImage} alt={category.title} className="gallery-image" />
+            <div className="gallery-heading">{category.title}</div>
+            <div className="gallery-count">{category.count} Photos</div>
           </div>
         ))}
       </div>
     </div>
+    </>
   );
 };
 

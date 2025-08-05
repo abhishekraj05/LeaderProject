@@ -18,19 +18,19 @@ import p14 from "../../assets/p14.jpg";
 export const galleryData = [
   {
     id: "nature",
-    title: "Nature",
+    title: "Social Media",
     coverImage: p1,
     images: [p2, p3, p4, p5]
   },
   {
     id: "social",
-    title: "Social Events",
+    title: "Photos",
     coverImage: p6,
     images: [p7, p8, p9]
   },
   {
     id: "festivals",
-    title: "Festivals",
+    title: "News",
     coverImage: p10,
     images: [p11, p12, p13, p14]
   }

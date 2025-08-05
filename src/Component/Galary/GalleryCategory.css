@@ -1,50 +1,49 @@
 .gallery-wrapper {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
+  padding: 40px;
   text-align: center;
 }
 
 .gallery-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
 .gallery-grid {
   display: flex;
-  justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* thoda gap badhaya */
 }
 
 .gallery-card {
-  width: 300px;
+  width: 300px; /* pehle 250px tha */
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
 .gallery-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-8px);
 }
 
 .gallery-image {
   width: 100%;
-  border-radius: 8px;
+  height: 220px; /* pehle 180px tha */
   object-fit: cover;
-  aspect-ratio: 4 / 3;
 }
 
 .gallery-heading {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #d63301;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0 6px;
 }
 
 .gallery-count {
-  font-size: 0.9rem;
-  color: #444;
-  margin-top: 5px;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 12px;
 }
