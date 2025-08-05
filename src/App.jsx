@@ -1,11 +1,11 @@
 import './App.css'
-import FutureDevelopmentArea from './Component/Home/FutureDevelopmentArea'
+import HomePage from './Component/Home/HomePage'
 
 function App() {
 
   return (
     <>
-      <FutureDevelopmentArea/>
+    <HomePage/>
     </>
   )
 }
