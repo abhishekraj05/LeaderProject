@@ -1,0 +1,115 @@
+
+
+
+
+
+
+/* footer */
+
+.footer {
+  background-color: #008000;
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.footer-gallery-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #000;
+}
+
+
+.connect-list {
+  list-style: none;
+  padding: 0;
+}
+
+.connect-list li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.connect-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.connect-list a:hover {
+  text-decoration: underline;
+}
+
+/* Icon colors - official brand colors */
+.facebook-icon {
+  color: #1877f2; /* Facebook Blue */
+}
+
+.twitter-icon {
+  color: #000; /* Twitter/X Blue */
+}
+
+.youtube-icon {
+  color: #ff0000; /* YouTube Red */
+}
+
+.instagram-icon {
+  color: #e1306c; /* Instagram Pinkish */
+}
+
+.whatsapp-icon {
+  color: #25d366; /* WhatsApp Green */
+}
+
+.connect-list a{
+    color:white ;
+}
+
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
