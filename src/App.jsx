@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GalleryPage from './Component/Galary/GalleryPage';
 import GalleryPhotos from './Component/Galary/GalleryPhotos';
 import './App.css';
 import HomePage from "./Component/Home/HomePage";
+=======
+import './App.css'
+import Footer from './Component/Footer'
+>>>>>>> 720e50e (Footer complite only galery add)
 
 function App() {
   return (
+<<<<<<< HEAD
     <Router>
       <Routes>
         {/* Home Route */}
@@ -27,6 +33,12 @@ function App() {
       </Routes>
     </Router>
   );
+=======
+    <>
+      <Footer></Footer>
+    </>
+  )
+>>>>>>> 720e50e (Footer complite only galery add)
 }
 
 export default App;
