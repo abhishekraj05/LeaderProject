@@ -1,3 +1,22 @@
+/* Hide Google Translate Popup */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-simple,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important; /* prevents layout shift */
+}
+
+
+
+
 
 
 
