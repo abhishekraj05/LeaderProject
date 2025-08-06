@@ -22,7 +22,7 @@ const Gallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="gallery-container">
+    <div  className="gallery-container">
          <h2>
         Image   <span >Gallery</span>
       </h2>

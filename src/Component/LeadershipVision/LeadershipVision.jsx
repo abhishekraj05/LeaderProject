@@ -8,12 +8,12 @@ const LeadershipVision = () => {
   return (
     <section className="vision-section">
       <LeftLeadershipVision
-        title="Youth Affairs"
+        title="YOUTH AFFAIRS"
         description="Youth are the mirror images of growth of the country. 50 crores youth population in India is the asset for the nation. Great impetus must be put into youth development, and I intend to initiate programmes centered on youth development empowerment and learning."
         image={image5}
       />
       <RightLeadershipVision
-        title="Infrastructure Development"
+        title="INFRASTRUCTURE DEVELOPMENT"
         description="For welfare of the people of my constituency my major concern is refining infrastructure within our area. I set up intricate plans with serious deadlines and priorities. My priorities are roads, water supply, electricity, drainage, sanitation, health care, transport and safety.."
         image={image5}
       />

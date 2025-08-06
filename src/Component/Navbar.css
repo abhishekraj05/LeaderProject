@@ -1,13 +1,19 @@
-/* Basic Reset */
+/* ========== GLOBAL RESET ========== */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  width: 100%;
   overflow-x: hidden;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* Fixed top navbar */
+/* Padding to prevent content hiding behind navbar */
+body {
+  padding-top: 110px;
+}
+
+/* ========== NAVBAR ========== */
 .navbar {
   position: fixed;
   top: 0;
@@ -17,24 +23,16 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 12px 30px;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-body {
-  padding-top: 80px; /* Prevents content hiding behind navbar */
-}
-
+/* Left logo + name */
 .navbar-left {
   display: flex;
   align-items: center;
-}
-
-.rjd-logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  gap: 12px;
 }
 
 .rjd-text {
@@ -43,50 +41,77 @@ body {
 }
 
 .leader-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
   color: #1b5e20;
+  letter-spacing: 0.5px;
 }
 
 .party-name {
   font-size: 14px;
-  background-color: #43a047;
+  font-weight: 500;
+  background-color: #4caf50;
   color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
   width: fit-content;
 }
 
-/* Nav Links Desktop */
+/* ========== DESKTOP LINKS ========== */
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links-desktop a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
   font-weight: 500;
+  font-size: 16px;
   color: #333;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links-desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
 }
 
 .nav-links-desktop a:hover {
-  color: #43a047;
+  color: #4caf50;
 }
 
-/* Hamburger for mobile */
+.nav-links-desktop a:hover::after {
+  width: 100%;
+}
+
+/* ========== HAMBURGER ========== */
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   color: #1b5e20;
+  background: none;
+  border: none;
 }
 
-/* Sidebar */
+/* ========== SIDEBAR (Mobile/Tablet) ========== */
 .mobile-sidebar {
   position: fixed;
-  top: 8.2rem;
-  left: -550px; /* hidden by default */ 
+  top: 0;
+  left: -300px;
   height: 100vh;
   width: 250px;
   background-color: white;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
-  padding: 60px 20px 20px;
+  padding: 80px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -96,21 +121,33 @@ body {
 }
 
 .mobile-sidebar.open {
-  left: 0; /* show when open */
+  left: 0;
 }
 
 .mobile-sidebar a {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   color: #1b5e20;
-  font-size: 16px;
+  font-size: 17px;
+  transition: color 0.3s ease;
 }
 
 .mobile-sidebar a:hover {
-  color: #43a047;
+  color: #2e7d32;
 }
 
-/* Overlay */
+/* Optional: close button inside sidebar */
+.mobile-sidebar .close-btn {
+  align-self: flex-end;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ========== OVERLAY ========== */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -121,8 +158,8 @@ body {
   z-index: 1000;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
   .nav-links-desktop {
     display: none;
   }
@@ -130,6 +167,42 @@ body {
   .hamburger {
     display: block;
   }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .leader-name {
+    font-size: 18px;
+  }
+
+  .party-name {
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+
+  .mobile-sidebar {
+    width: 80vw;
+  }
 }
 
+@media (max-width: 480px) {
+  .leader-name {
+    font-size: 16px;
+  }
 
+  .party-name {
+    font-size: 11px;
+    padding: 1px 5px;
+  }
+
+  .mobile-sidebar a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px; /* more space for mobile navbar */
+  }
+}

@@ -13,16 +13,16 @@ export default function Navbar() {
 
   const closeSidebar = () => setSidebarOpen(false);
 
+  const handleHashLink = (hashPath) => {
+    navigate(hashPath);
+    closeSidebar();
+  };
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <img
-            style={{ width: "7em", height: "1%" }}
-            src={rjdLogo}
-            alt="RJD Logo"
-            className="rjd-logo"
-          />
+          <img style={{width: "7em" , height:"1%"}} src={rjdLogo} alt="RJD Logo" className="rjd-logo" />
           <div className="rjd-text">
             <div className="leader-name">Jawahar Lal Ray</div>
             <div className="party-name">Rashtriya Janata Dal</div>
@@ -47,7 +47,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Sidebar for mobile */}
       <div className={`mobile-sidebar ${sidebarOpen ? "open" : ""}`}>
         <Link to="/" onClick={closeSidebar}>Home</Link>
         <Link to="/about" onClick={closeSidebar}>About</Link>
