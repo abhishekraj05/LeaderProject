@@ -1,25 +1,35 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LanguageContext } from "../LanguageContext.jsx";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import rjdLogo from "../assets/rjd-logo.jpg";
+import rjdLogo from "../assets/rjd-logooo.jpg";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
-  const { language } = useContext(LanguageContext);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // always false by default
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Scroll lock on body when sidebar is open
   useEffect(() => {
-    if (sidebarOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100); // delay to ensure DOM is loaded
+      }
     }
+  }, [location]);
+
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? "hidden" : "auto";
   }, [sidebarOpen]);
 
-  // Close on nav link click
   const closeSidebar = () => setSidebarOpen(false);
+
+  const handleHashLink = (hashPath) => {
+    navigate(hashPath);
+    closeSidebar();
+  };
 
   return (
     <>
@@ -27,8 +37,8 @@ export default function Navbar() {
         <div className="navbar-left">
           <img src={rjdLogo} alt="RJD Logo" className="rjd-logo" />
           <div className="rjd-text">
-            <div className="leader-name">जवाहर लाल राय</div>
-            <div className="party-name">राष्ट्रीय जनता दल</div>
+            <div className="leader-name">Jawahar Lal Rai</div>
+            <div className="party-name">Rashtriya Janata Dal</div>
           </div>
         </div>
 
@@ -37,21 +47,22 @@ export default function Navbar() {
         </div>
 
         <div className="nav-links-desktop">
-          <Link to="/" onClick={closeSidebar}>{language === "en" ? "Home" : "मुखपृष्ठ"}</Link>
-          <Link to="/about" onClick={closeSidebar}>{language === "en" ? "About" : "जीवनी"}</Link>
-          <Link to="/vision" onClick={closeSidebar}>{language === "en" ? "Vision" : "मेरे प्रेरणा स्रोत"}</Link>
-          <Link to="/gallery" onClick={closeSidebar}>{language === "en" ? "Gallery" : "गेलरी"}</Link>
-          <Link to="/contact" onClick={closeSidebar}>{language === "en" ? "Contact" : "संपर्क करें"}</Link>
+          <Link to="/" onClick={closeSidebar}>Home</Link>
+          <Link to="/#vision" onClick={() => handleHashLink("/#vision")}>Vision</Link>
+          <Link to="/#about" onClick={() => handleHashLink("/#about")}>About</Link>
+          <Link to="/#gallery" onClick={() => handleHashLink("/#gallery")}>Gallery</Link>
+          <Link to="/#contact" onClick={() => handleHashLink("/#contact")}>Contact</Link>
+          <Link to="/biography" onClick={closeSidebar}>Biography</Link>
         </div>
       </nav>
 
-      {/* Sidebar for mobile */}
       <div className={`mobile-sidebar ${sidebarOpen ? "open" : ""}`}>
-        <Link to="/" onClick={closeSidebar}>{language === "en" ? "Home" : "मुखपृष्ठ"}</Link>
-        <Link to="/about" onClick={closeSidebar}>{language === "en" ? "About" : "जीवनी"}</Link>
-        <Link to="/vision" onClick={closeSidebar}>{language === "en" ? "Vision" : "मेरे प्रेरणा स्रोत"}</Link>
-        <Link to="/gallery" onClick={closeSidebar}>{language === "en" ? "Gallery" : "गेलरी"}</Link>
-        <Link to="/contact" onClick={closeSidebar}>{language === "en" ? "Contact" : "संपर्क करें"}</Link>
+        <Link to="/" onClick={closeSidebar}>Home</Link>
+        <Link to="/#vision" onClick={() => handleHashLink("/#vision")}>Vision</Link>
+        <Link to="/#about" onClick={() => handleHashLink("/#about")}>About</Link>
+        <Link to="/#gallery" onClick={() => handleHashLink("/#gallery")}>Gallery</Link>
+        <Link to="/#contact" onClick={() => handleHashLink("/#contact")}>Contact</Link>
+        <Link to="/biography" onClick={closeSidebar}>Biography</Link>
       </div>
 
       {sidebarOpen && <div className="sidebar-overlay" onClick={closeSidebar} />}

@@ -1,0 +1,18 @@
+.biography-container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.biography-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2cab39;
+}
+
+.biography-container p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-top: 20px;
+}
