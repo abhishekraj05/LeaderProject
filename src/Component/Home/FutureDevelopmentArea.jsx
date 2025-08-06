@@ -1,18 +1,18 @@
 // FutureDevelopmentArea.jsx
 import React from 'react';
-import Economy from "../../assets/Economy.png"
-import EconomyImg from "../../assets/EconomyImg.jpg"
-import Agriculture from "../../assets/Agriculture.png"
-import AgricultureImg from "../../assets/AgricultureImg.jpg"
-import Water from "../../assets/Water.png"
-import WaterImg from "../../assets/WaterImg.jpg"
-import Education from "../../assets/Education.png"
-import EducationImg from "../../assets/EducationImg.jpg"
-import Health from "../../assets/Health.png"
-import HealthImg from "../../assets/HealthImg.jpg"
-import Electricity from "../../assets/Electricity.png"
-import Electricityimg from "../../assets/ElectricityImg.jpg"
-import  './FutureDevelopmentArea.css';
+import Economy from "../../assets/Economy.png";
+import EconomyImg from "../../assets/EconomyImg.jpg";
+import Agriculture from "../../assets/Agriculture.png";
+import AgricultureImg from "../../assets/AgricultureImg.jpg";
+import Water from "../../assets/Water.png";
+import WaterImg from "../../assets/WaterImg.jpg";
+import Education from "../../assets/Education.png";
+import EducationImg from "../../assets/EducationImg.jpg";
+import Health from "../../assets/Health.png";
+import HealthImg from "../../assets/HealthImg.jpg";
+import Electricity from "../../assets/Electricity.png";
+import Electricityimg from "../../assets/ElectricityImg.jpg";
+import './FutureDevelopmentArea.css';
 
 const Card = ({ image, icon, title, description }) => {
   return (
@@ -23,7 +23,7 @@ const Card = ({ image, icon, title, description }) => {
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
-      <button className="future-button">और देखें ⟶</button>
+      <button className="future-button">Read More ⟶</button>
     </div>
   );
 };
@@ -31,53 +31,53 @@ const Card = ({ image, icon, title, description }) => {
 const FutureDevelopmentArea = () => {
   const data = [
     {
-      title: 'अर्थव्यवस्था',
+      title: 'Economy',
       image: EconomyImg,
       icon: Economy,
       description:
-        'ज़रूरत से ज़्यादा कर लगाना चोरी है। एक जटिल कर व्यवस्था इस चोरी को आसान बनाने के लिए एक बेहतरीन आवरण है और इसे हम पर थोपा गया है...'
+        'Overtaxing is theft. A complex tax system is an excellent cover for this theft and has been imposed upon us...'
     },
     {
-      title: 'कृषि',
+      title: 'Agriculture',
       image: AgricultureImg,
       icon: Agriculture,
       description:
-        'उत्पादन लागत पर न्यूनतम 50% लाभ सुनिश्चित करके, सस्ती कृषि इनपुट उपलब्ध कराकर कृषि में लाभप्रदता बढ़ाने के लिए कदम उठाएं...'
+        'Steps will be taken to increase profitability in agriculture by ensuring a minimum of 50% profit over production cost and providing affordable agricultural inputs...'
     },
     {
-      title: 'पानी',
+      title: 'Water',
       image: WaterImg,
-      icon:Water ,
+      icon: Water,
       description:
-        'वर्षा आधारित क्षेत्रों में भूमि विकास और किसानों की आय बढ़ाने तथा आरओ संयंत्र उपलब्ध कराने के लिए प्रति वर्ष एक बड़ी राशि निर्धारित की जाएगी।'
+        'A large annual budget will be allocated to improve land development in rain-dependent areas, increase farmer incomes, and provide RO plants.'
     },
     {
-      title: 'शिक्षा',
+      title: 'Education',
       image: EducationImg,
       icon: Education,
       description:
-        'वैज्ञानिक स्वभाव को आत्मसात करके जटिल आधुनिक विश्व की चुनौतियों से निपटने के लिए एक कुशल युवा को तैयार करना...'
+        'Preparing skilled youth to deal with the challenges of a complex modern world by instilling a scientific temperament...'
     },
     {
-      title: 'स्वास्थ्य',
+      title: 'Health',
       image: HealthImg,
       icon: Health,
       description:
-        'निजी-सार्वजनिक योजना के तहत हर अस्पताल में गरीबों के लिए सीटी स्कैन, एमआरआई और अल्ट्रासाउंड सुविधाओं के साथ 24 घंटे मुफ्त डायग्नोस्टिक सेंटर चलाए जाएंगे।'
+        'Under a public-private initiative, free diagnostic centers with CT scan, MRI, and ultrasound facilities will operate 24/7 for the poor in every hospital.'
     },
     {
-      title: 'बिजली',
+      title: 'Electricity',
       image: Electricityimg,
       icon: Electricity,
       description:
-        'हमारे घोषणापत्र में शहरी क्षेत्रों में ऊर्जा की पहुँच को 100 प्रतिशत और ग्रामीण क्षेत्रों में 90 प्रतिशत तक बढ़ाने का वादा किया गया है। वर्तमान में, 94 प्रतिशत...'
+        'Our manifesto promises to expand urban energy access to 100% and rural access to 90%. Currently, 94%...'
     }
   ];
 
   return (
     <section className="future-container">
       <h2>
-        भविष्य का <span >विकास क्षेत्र</span>
+        Future <span>Development Areas</span>
       </h2>
       <div className="future-grid">
         {data.map((item, index) => (

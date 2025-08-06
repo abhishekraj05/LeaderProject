@@ -24,7 +24,7 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
          <h2>
-        छवि  <span >गैलरी</span>
+        Image   <span >Gallery</span>
       </h2>
       {/* Main Swiper – Autoplay and visible on load */}
       <Swiper

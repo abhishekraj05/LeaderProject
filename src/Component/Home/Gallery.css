@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-    text-align: center;
+  text-align: center;
   padding: 3rem 1rem;
   /* max-width: 1200px; */
   /* margin: auto; */
@@ -14,7 +14,7 @@
 
 .gallery-container h2 span {
   font-weight: bold;
-  color: #17d751;
+  color: var(--green-color);
 }
 .main-swiper {
   height: 500px;

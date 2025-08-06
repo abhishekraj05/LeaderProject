@@ -1,3 +1,8 @@
+:root {
+  --green-color: #008000;
+}
+
+
 
 /* Hide Google Translate Popup */
 .goog-te-banner-frame.skiptranslate,

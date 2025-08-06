@@ -1,0 +1,46 @@
+.vision-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.vision-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+
+.vision-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.vision-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vision-text h2 {
+  color: var(--green-color);
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.vision-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.vision-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.vision-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

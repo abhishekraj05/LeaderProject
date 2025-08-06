@@ -13,7 +13,7 @@
 
 .future-container h2 span {
   font-weight: bold;
-   color: #17d751;
+ color: var(--green-color);
 }
 
 .future-grid {
