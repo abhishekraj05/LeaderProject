@@ -1,4 +1,5 @@
 import React from "react";
+import img from "../assets/p44.jpg";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="footer-section">
           <h2>Gallery</h2>
           <img
-            src="your-image-path.jpg" // replace with actual image path
+            src={img}// replace with actual image path
             alt="RJD Rally"
             className="footer-gallery-image"
           />
@@ -32,11 +33,11 @@ const Footer = () => {
   <ul className="connect-list">
     <li>
       <i className="fa-brands fa-facebook facebook-icon"></i>
-      <a href="">Facebook</a>
+      <a href="https://www.facebook.com/share/1BJRQcMG5v/">Facebook</a>
     </li>
     <li>
       <i className="fa-brands fa-x-twitter twitter-icon"></i>
-      <a href="">Twitter</a>
+      <a href="https://x.com/pramukhjawahar?t=XgBns0xgcnB1coIkB0rKUw&s=08">Twitter</a>
     </li>
     <li>
       <i className="fa-brands fa-youtube youtube-icon"></i>
@@ -44,7 +45,7 @@ const Footer = () => {
     </li>
     <li>
       <i className="fa-brands fa-square-instagram instagram-icon"></i>
-      <a href="">Instagram</a>
+      <a href="https://www.instagram.com/jawaharlal_ray_?igsh=MXhxa2k5bXozaDZpaw==">Instagram</a>
     </li>
     <li>
       <i className="fa-brands fa-whatsapp whatsapp-icon"></i>
