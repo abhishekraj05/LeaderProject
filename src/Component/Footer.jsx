@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../assets/footerimg.jpg";
 const Footer = () => {
+  const navigate = useNavigate();
+
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -8,6 +12,7 @@ const Footer = () => {
         <div className="footer-section">
           <h2>Gallery</h2>
           <img
+            onClick={() => navigate("/gallery")}
             src={img} // replace with actual image path
             alt="Tejashwi Yadav Meeting"
             className="footer-gallery-image"
@@ -19,19 +24,19 @@ const Footer = () => {
           <h2>Useful Links</h2>
           <ul>
             <li>
-              <a href="#">About Party</a>
+              <a onClick={() => navigate("/")} href="#">Home</a>
             </li>
             <li>
-              <a href="#">Party Ideology</a>
+              <a onClick={() => navigate("/about")} href="#">About Party</a>
             </li>
             <li>
-              <a href="#">Our Leadership</a>
+              <a onClick={() => navigate("/vision")} href="#">Our Vision</a>
             </li>
             <li>
-              <a href="#">RJD Officials</a>
+              <a onClick={() => navigate("/gallery")} href="#">Our Photos</a>
             </li>
             <li>
-              <a href="#">Gallery</a>
+              <a onClick={() => navigate("/contact")} href="#">Contact</a>
             </li>
           </ul>
         </div>

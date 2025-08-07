@@ -6,7 +6,7 @@ const LeaderIntro = () => {
   const navigate = useNavigate();
 
   const handleViewMore = () => {
-    navigate('/biography');
+    navigate('/about');
   };
 
   return (
