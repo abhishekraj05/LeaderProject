@@ -6,15 +6,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./ImageSlider.css";
+import cover1 from "../../assets/CoverImg1.png"
+import cover2 from "../../assets/coverimg3.png"
+import cover3 from "../../assets/coverimg4.jpg"
 
 // Register modules
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const ImageSlider = () => {
   const images = [
-    'https://rjd.co.in/wp-content/uploads/2017/07/homepage-0.jpg',
-    'https://mohanlalbadoli.com/wp-content/uploads/2021/07/slide-2.jpg',
-    'https://rjd.co.in/wp-content/uploads/2017/07/homepage-0.jpg',
+    cover3,
+    cover2,
+    cover1,
+    cover2,
   ];
 
   return (
