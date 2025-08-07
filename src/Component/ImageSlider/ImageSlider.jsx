@@ -14,17 +14,20 @@ const ImageSlider = () => {
   ];
 
   return (
-    <div className="full-slider-wrapper">
+    <div className="slider-wrapper">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 2500 }}
+        autoplay={{ delay: 3000 }}
         loop
+        className="swiper-container"
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <img src={img} alt={`Slide ${index + 1}`} className="full-slide-img" />
+            <div className="slide-img-wrapper">
+              <img src={img} alt={`Slide ${index + 1}`} className="slide-img" />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

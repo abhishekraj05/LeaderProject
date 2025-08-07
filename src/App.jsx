@@ -7,8 +7,8 @@ import GalleryPhotos from './Component/Galary/GalleryPhotos';
 import FutureDevelopmentArea from './Component/Home/FutureDevelopmentArea';
 import About from './Component/Home/About.jsx';
 import Navbar from "./Component/Navbar.jsx";
-import ImageSlider from "./Component/ImageSlider";
-import Biography from "./Component/Biography"; // ✅ Import biography
+import ImageSlider from "./Component/ImageSlider/ImageSlider.jsx";
+import Biography from "./Component/Biography/Biography.jsx"; // ✅ Import biography
 import './App.css';
 
 function App() {
