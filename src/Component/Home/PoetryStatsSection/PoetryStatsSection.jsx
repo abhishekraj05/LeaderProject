@@ -1,6 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,13 +22,18 @@ const poetryLines = [
 ];
 
 const stats = [
-  { icon: "🌾", value: "50+", label: "Villages Visited" },
-  { icon: "🧑‍🤝‍🧑", value: "10K+", label: "Supporters" },
-  { icon: "📢", value: "25+", label: "Public Speeches" },
-  { icon: "✅", value: "100+", label: "Promises Fulfilled" },
+  { icon: "🌾", value1: 10, value2: 50, suffix: "+", label: "Villages Visited" },
+  { icon: "🧑‍🤝‍🧑", value1: 90950, value2: 100000, suffix: "+", label: "Supporters" },
+  { icon: "📢", value1: 10, value2: 25, suffix: "+", label: "Public Speeches" },
+  { icon: "✅", value1: 30, value2: 100, suffix: "+", label: "Promises Fulfilled" },
 ];
 
 const PoetryStatsSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <div className="poetry-section-wrapper">
       <div className="slider-container">
@@ -57,11 +64,23 @@ const PoetryStatsSection = () => {
         </div>
       </div>
 
-      <div className="stats-section">
+      <div className="stats-section" ref={ref}>
         {stats.map((stat, i) => (
           <div className="stat-card" key={i}>
             <div className="icon">{stat.icon}</div>
-            <div className="value">{stat.value}</div>
+            <div className="value">
+              {inView ? (
+                <CountUp
+                  start={stat.value1}
+                  end={stat.value2}
+                  duration={3}
+                  separator=","
+                  suffix={stat.suffix}
+                />
+              ) : (
+                "0" + stat.suffix
+              )}
+            </div>
             <div className="label">{stat.label}</div>
           </div>
         ))}

@@ -50,6 +50,7 @@
   margin-top: 10px;
   font-style: italic;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
+  padding-bottom: 1.2rem;
 }
 
 /* Swiper pagination & nav */
