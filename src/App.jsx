@@ -10,6 +10,8 @@ import Navbar from "./Component/Navbar.jsx";
 import ImageSlider from "./Component/ImageSlider/ImageSlider.jsx";
 import Biography from "./Component/Biography/Biography.jsx"; // ✅ Import biography
 import './App.css';
+import PoetryStatsSection from "./Component/Home/PoetryStatsSection/PoetryStatsSection";
+
 
 function App() {
   const aboutRef = useRef(null);
@@ -36,6 +38,7 @@ function App() {
                 <About />
               </div>
               <FutureDevelopmentArea />
+               <PoetryStatsSection />
             </>
           }
         />
