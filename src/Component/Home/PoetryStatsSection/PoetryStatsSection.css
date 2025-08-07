@@ -38,7 +38,7 @@
   color: white;
   max-width: 800px;
   margin: auto;
-  animation: fadeInUp 1s ease;
+  animation: bounceScaleFadeIn 1s ease forwards;
 }
 
 .quote-text {
@@ -96,9 +96,9 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transform: translateY(20px);
+  transform: translateY(30px);
   opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+  animation: bounceScaleFadeIn 0.9s ease forwards;
   transition: transform 0.3s ease;
 }
 
@@ -128,19 +128,40 @@
   margin-top: 6px;
 }
 
-/* ==== KEYFRAME ANIMATION ==== */
-@keyframes fadeInUp {
+/* ==== ANIMATION ==== */
+@keyframes bounceScaleFadeIn {
   0% {
-    transform: translateY(30px);
     opacity: 0;
+    transform: scale(0.8) translateY(60px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(-8px);
+  }
+  80% {
+    transform: scale(0.98) translateY(4px);
   }
   100% {
-    transform: translateY(0px);
     opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
-/* ==== MEDIA QUERIES ==== */
+/* Optional: Staggered animations */
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
 @media (max-width: 768px) {
   .slider-container {
     height: 300px;
@@ -184,3 +205,4 @@
     font-size: 1.8rem;
   }
 }
+

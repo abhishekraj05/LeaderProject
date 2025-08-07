@@ -21,6 +21,24 @@ body {
 }
 
 
+
+body.lenis-smooth {
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+}
+
+.content {
+  padding: 100px;
+}
+
+
 /* footer */
 
 .footer {
@@ -213,6 +231,7 @@ body {
 
   .connect-list li {
     justify-content: center;
+    gap: 5px;
   }
 
   .footer-bottom {

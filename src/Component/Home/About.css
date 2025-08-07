@@ -109,3 +109,11 @@
   transform: translateY(-2px);
 }
 
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
