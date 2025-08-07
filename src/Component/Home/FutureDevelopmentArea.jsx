@@ -1,5 +1,7 @@
 // FutureDevelopmentArea.jsx
 import React from 'react';
+import { useNavigate } from "react-router-dom";
+
 import Economy from "../../assets/Economy.png";
 import EconomyImg from "../../assets/EconomyImg.jpg";
 import Agriculture from "../../assets/Agriculture.png";
@@ -15,6 +17,8 @@ import Electricityimg from "../../assets/ElectricityImg.jpg";
 import './FutureDevelopmentArea.css';
 
 const Card = ({ image, icon, title, description }) => {
+
+   const navigate = useNavigate();
   return (
     <div className="future-card">
       <img src={image} alt={title} className="future-image" />
@@ -23,7 +27,7 @@ const Card = ({ image, icon, title, description }) => {
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
-      <button className="future-button">Read More ⟶</button>
+      <button onClick={() => navigate("/vision")} className="future-button">Read More ⟶</button>
     </div>
   );
 };
@@ -75,6 +79,7 @@ const FutureDevelopmentArea = () => {
   ];
 
   return (
+
     <section className="future-container">
       <h2>
         Future <span>Development Areas</span>

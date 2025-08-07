@@ -21,7 +21,6 @@ body {
 }
 
 
-
 /* footer */
 
 .footer {
@@ -29,6 +28,7 @@ body {
   color: white;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
+  animation: fadeInUp 1s ease;
 }
 
 .footer-container {
@@ -36,16 +36,22 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
+  animation: slideIn 1s ease;
 }
 
 .footer-section {
   flex: 1 1 250px;
+  min-width: 240px;
+  animation: fadeIn 0.8s ease;
 }
 
 .footer-section h2 {
   font-size: 18px;
   margin-bottom: 15px;
   color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+  animation: fadeIn 0.8s ease;
 }
 
 .footer-gallery-image {
@@ -53,6 +59,11 @@ body {
   max-width: 300px;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.footer-gallery-image:hover {
+  transform: scale(1.05);
 }
 
 .footer-section ul {
@@ -68,16 +79,20 @@ body {
 .footer-section a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
   color: #000;
 }
 
-
+/* Contact Icons */
 .connect-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .connect-list li {
@@ -86,42 +101,26 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  animation: fadeIn 1s ease;
 }
 
 .connect-list a {
   color: white;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .connect-list a:hover {
   text-decoration: underline;
+  transform: translateX(4px);
 }
 
 /* Icon colors - official brand colors */
-.facebook-icon {
-  color: #1877f2; /* Facebook Blue */
-}
-
-.twitter-icon {
-  color: #000; /* Twitter/X Blue */
-}
-
-.youtube-icon {
-  color: #ff0000; /* YouTube Red */
-}
-
-.instagram-icon {
-  color: #e1306c; /* Instagram Pinkish */
-}
-
-.whatsapp-icon {
-  color: #25d366; /* WhatsApp Green */
-}
-
-.connect-list a{
-    color:white ;
-}
-
+.facebook-icon { color: #1877f2; }
+.twitter-icon { color: #000; }
+.youtube-icon { color: #ff0000; }
+.instagram-icon { color: #e1306c; }
+.whatsapp-icon { color: #25d366; }
 
 .footer-bottom {
   margin-top: 40px;
@@ -130,4 +129,132 @@ body {
   text-align: center;
   color: white;
   font-size: 14px;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .connect-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       
+    text-align: center;
+    width: 100%;
+  }
+
+  .connect-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    gap: 10px;
+    width: 100%;
+  }
+
+  .footer-gallery-image {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-section h2 {
+    font-size: 16px;
+  }
+
+  .footer-section li,
+  .connect-list li {
+    font-size: 13px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .connect-list {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .connect-list li {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media ((min-width: 700px) AND (max-width: 870px)){
+   .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .connect-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* ✅ center icon + text */
+    text-align: center;
+    width: 100%;
+  }
+
+  .connect-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* ✅ center icon + text */
+    gap: 10px;
+    width: 100%;
+  }
+
+  .footer-gallery-image {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    text-align: center;
+  }
 }
