@@ -28,7 +28,6 @@ html, body {
   object-position: center;     
   display: block;
   background-color: #ffffff;
-  user-select: none;
   pointer-events: none;
   touch-action: none;
 }

@@ -31,7 +31,7 @@ html, body {
   object-position: center;     /* ✅ Center the image to avoid top cut */
   display: block;
   background-color: #ffffff;
-  user-select: none;
+  /* user-select: none; */
   pointer-events: none;
   touch-action: none;
 }
