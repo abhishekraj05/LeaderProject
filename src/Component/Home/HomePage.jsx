@@ -3,6 +3,7 @@ import FutureDevelopmentArea from './FutureDevelopmentArea'
 import Gallery from './Gallery'
 // import ImageSlider from '../ImageSlider/ImageSlider.jsx'
 import LeaderIntro from './About'
+import PoetryStatsSection from './PoetryStatsSection/PoetryStatsSection'
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
     <LeaderIntro />
     <FutureDevelopmentArea/>
     <Gallery/>
+    <PoetryStatsSection />
     </>
   )
 }

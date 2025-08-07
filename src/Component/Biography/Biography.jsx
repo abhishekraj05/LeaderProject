@@ -11,7 +11,7 @@ const Biography = () => {
             Candidate for 137 – Mohiuddin Nagar Assembly Constituency (2025
             Elections)
           </p>
-        </div>
+        </div>  
 
         <div className="bio-section main-info">
           <div className="bio-image-wrapper">
