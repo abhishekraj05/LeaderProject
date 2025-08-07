@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import galleryBanner from "../../assets/p6.jpg";  
+import galleryBanner from "../../assets/CoverImg1.png";  
 import "./GalleryBanner.css";
 
 const GalleryBanner = () => (

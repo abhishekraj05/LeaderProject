@@ -36,11 +36,18 @@
 .vision-image {
   flex: 1;
   min-width: 300px;
+  max-width: 400px;
+  height: 300px; /* Fixed height for uniformity */
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vision-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and fill container */
   border-radius: 8px;
 }
+

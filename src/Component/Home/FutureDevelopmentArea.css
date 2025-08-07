@@ -65,7 +65,7 @@
 }
 
 .future-button {
-  background: #e74c3c;
+  background:var(--green-color);
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
