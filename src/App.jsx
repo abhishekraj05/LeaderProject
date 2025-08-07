@@ -4,6 +4,7 @@ import GalleryPhotos from './Component/Galary/GalleryPhotos';
 import './App.css';
 import HomePage from "./Component/Home/HomePage";
 import Footer from "./Component/Footer";
+import ContactSection from "./Component/Contact/Contact";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             <>
               <HomePage />
               {/* You can add more sections here if needed */}
+             <ContactSection></ContactSection>
+
               <Footer></Footer>
             </>
           }
@@ -23,7 +26,7 @@ function App() {
 
         {/* Gallery Main Page */}
         <Route path="/gallery" element={<GalleryPage />} />
-
+          
         {/* Gallery Category Images */}
         <Route path="/gallery/:categoryId" element={<GalleryPhotos />} />
       </Routes>
