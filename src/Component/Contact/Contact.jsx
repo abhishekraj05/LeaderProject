@@ -9,7 +9,6 @@ import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from "react-icons/fa";
 const ContactSection = () => {
   return (
     <div className="contact-container" id="contact">
-        
       <Container className="d-flex justify-content-center align-items-center min-vh-100">
         <div className="contact-card text-center shadow">
           <img
@@ -20,12 +19,16 @@ const ContactSection = () => {
           <h2 className="mt-3">Jawahar Lal Ray</h2>
           <p className="text-muted">Progressive Thinker | Empowering the Youth</p>
 
-          <div className="contact-info mt-4">
-            <p><strong>Email:</strong> deepak@example.com</p>
-            <p><strong>Phone:</strong> +91 9876543210</p>
-          </div>
+          <p className="description mt-4">
+            Shri Jawahar Lal Ray, a devoted and passionate leader, has always stood
+            for the welfare and upliftment of his people. Known for his dedication,
+            simplicity, and strong connection with the grassroots, he has tirelessly
+            worked to improve the quality of life for the underprivileged. With a
+            clear vision for the future and an undying love for the country, he
+            continues to inspire generations.
+          </p>
 
-          <div className="social-links mt-3">
+          <div className="social-links mt-4">
             <a href="https://www.instagram.com/jawaharlal_ray_?igsh=MXhxa2k5bXozaDZpaw==" target="_blank" rel="noopener noreferrer">
               <FaInstagram /> Instagram
             </a>
