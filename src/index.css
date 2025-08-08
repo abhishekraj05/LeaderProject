@@ -18,6 +18,7 @@
 
 body {
   top: 0px !important; /* prevents layout shift */
+  overflow: hidden;
 }
 
 
