@@ -1,100 +1,285 @@
-/* Biography.css */
-.bio-wrapper {
-  background: #f4f6f9;
-  padding: 50px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.bio-card {
-  background: #ffffff;
-  padding: 40px;
-  max-width: 1100px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.bio-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.bio-title {
-  font-size: 36px;
-  color: #b30000;
-  margin-bottom: 10px;
-}
-
-.bio-position {
-  font-size: 18px;
-  color: #555;
-}
-
-.bio-section {
-  margin-bottom: 30px;
-}
-
-.bio-section h2 {
-  font-size: 24px;
-  color: #b30000;
-  margin-bottom: 12px;
-  border-left: 5px solid #b30000;
-  padding-left: 12px;
-}
-
-.bio-section p,
-.bio-section li {
-  font-size: 17px;
-  line-height: 1.7;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
   color: #333;
 }
 
-.bio-section ul {
-  padding-left: 20px;
-  margin: 0;
+.biography-container {
+  max-width: 100%;
+  padding: 60px 20px;
+  margin: 0 auto;
 }
 
-.bio-image-wrapper {
-  flex: 1;
+/* Title and Description */
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--green-color);
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  padding: 0 10%;
+}
+.banner-title{
+  color: var(--green-color);
+}
+/* Banner Section */
+.banner-highlights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  
+}
+
+.banner-image {
+  margin-right: 50px;
+}
+
+.banner-image img {
+  max-width: 250px;
+  border-radius: 15px;
+  display: block;
+}
+
+.banner-text {
+  max-width: 500px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1035px) {
+  .banner-image {
+    margin-right: 20px;
+  }
+
+  .banner-image img {
+    max-width: 200px;
+  }
+
+  .banner-text {
+    margin-left: 20px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .banner-highlights {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .banner-image {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .banner-image img {
+    max-width: 180px;
+  }
+
+  .banner-text {
+    margin-left: 0;
+  }
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
-  align-items: start;
+  background-color: white;
 }
 
-.bio-image {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 10px;
-  border: 3px solid #b30000;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
-.bio-section.main-info {
+.mission-vision-container {
   display: flex;
   gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 40px;
 }
 
-.bio-info {
-  flex: 2;
+.box {
+  background: linear-gradient(145deg, #e0f7fa, #ffffff);
+  border-radius: 12px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1),
+              -4px -4px 20px rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  flex: 1 1 45%;
+  min-width: 280px;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .bio-section.main-info {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.15),
+              -6px -6px 25px rgba(255, 255, 255, 0.5);
+}
 
-  .bio-title {
-    font-size: 28px;
-  }
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
 
-  .bio-section h2 {
-    font-size: 20px;
-  }
+.box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Tab Section */
+.tab-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tabs .active {
+  background-color: var(--green-color);
+  color: #fff;
+}
+
+.tab-content {
+  margin-top: 20px;
+  padding: 0 15%;
+  line-height: 1.6;
+}
+
+.image-section {
+  margin-top: 40px;
+  
+  text-align: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+
+
+/* Hobbies Section */
+.hobbies-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hobbies-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d89a00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hobbies-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hobbies-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 16px;
+  color: #333;
+}
+
+.hobbies-bars {
+  flex: 1;
+  min-width: 300px;
+}
+
+.bar {
+  margin-bottom: 20px;
+}
+
+.bar span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #2e3b55;
+}
+
+.progress-bar-outer {
+  position: relative;
+  background-color: #eee;
+  border-radius: 20px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  border-radius: 20px;
+  width: 0%;
+}
+
+.progress-bar-inner.red {
+  background-color: #e74c3c;
+}
+
+.progress-bar-inner.green {
+  background-color: #2ecc71;
+}
+
+.progress-bar-inner.blue {
+  background-color: #3498db;
+}
+
+.percentage-text {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: #fff;
+}
+
+.hobbies-image-frame {
+  margin-top: 40px;
+  border: 8px solid #ccc;
+  padding: 10px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hobbies-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
