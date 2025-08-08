@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import img from "../assets/footerimg.jpg";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const navigate = useNavigate();
-
 
   return (
     <footer className="footer">
@@ -24,19 +25,19 @@ const Footer = () => {
           <h2>Useful Links</h2>
           <ul>
             <li>
-              <a onClick={() => navigate("/")} href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a onClick={() => navigate("/about")} href="#">About Party</a>
+              <Link to="/about">About Party</Link>
             </li>
             <li>
-              <a onClick={() => navigate("/vision")} href="#">Our Vision</a>
+              <Link to="/vision">Our Vision</Link>
             </li>
             <li>
-              <a onClick={() => navigate("/gallery")} href="#">Our Photos</a>
+              <Link to="/gallery">Our Photos</Link>
             </li>
             <li>
-              <a onClick={() => navigate("/contact")} href="#">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

@@ -1,0 +1,72 @@
+.fullpage-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.6s ease-in-out;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.overlay h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .overlay h1 {
+    font-size: 2.6rem;
+  }
+
+  .overlay {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .overlay {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .overlay {
+    padding: 1rem;
+    max-width: 90%;
+  }
+}
