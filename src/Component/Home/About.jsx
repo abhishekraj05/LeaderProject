@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './About.css';
-import jawaharImage from '../../assets/_MG_7280.png';
+import jawaharImage from '../../assets/About.png';
 
 const LeaderIntro = () => {
   const navigate = useNavigate();
