@@ -51,3 +51,12 @@
   border-radius: 8px;
 }
 
+/* --- Mobile: Always text first, image second --- */
+@media (max-width: 767px) {
+  .vision-text {
+    order: 1;
+  }
+  .vision-image {
+    order: 2;
+  }
+}
