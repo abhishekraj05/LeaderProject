@@ -1,6 +1,6 @@
-// FutureDevelopmentArea.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import Economy from "../../assets/Economy.png";
 import EconomyImg from "../../assets/EconomyImg.jpg";
@@ -16,19 +16,31 @@ import Electricity from "../../assets/Electricity.png";
 import Electricityimg from "../../assets/ElectricityImg.jpg";
 import './FutureDevelopmentArea.css';
 
-const Card = ({ image, icon, title, description }) => {
+const Card = ({ image, icon, title, description, index }) => {
+  const navigate = useNavigate();
 
-   const navigate = useNavigate();
   return (
-    <div className="future-card">
+    <motion.div
+      className="future-card"
+      initial={{ opacity: 0, y: 80 }} // Start below and hidden
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }} // 📱 More sensitive for mobile
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: index * 0.15
+      }}
+    >
       <img src={image} alt={title} className="future-image" />
       <div className="future-icon">
         <img src={icon} alt="icon" />
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
-      <button onClick={() => navigate("/vision")} className="future-button">Read More ⟶</button>
-    </div>
+      <button onClick={() => navigate("/vision")} className="future-button">
+        Read More ⟶
+      </button>
+    </motion.div>
   );
 };
 
@@ -79,14 +91,13 @@ const FutureDevelopmentArea = () => {
   ];
 
   return (
-
     <section className="future-container">
       <h2>
         Future <span>Development Areas</span>
       </h2>
       <div className="future-grid">
         {data.map((item, index) => (
-          <Card key={index} {...item} />
+          <Card key={index} {...item} index={index} />
         ))}
       </div>
     </section>

@@ -130,4 +130,10 @@
     width: 47%;
   }
 }
+@media (max-width: 768px) {
+  .future-card:hover {
+    transform: none; /* Disable hover translate on mobile */
+  }
+}
+
 
