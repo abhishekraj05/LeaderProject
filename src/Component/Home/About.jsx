@@ -1,18 +1,14 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './About.css';
-import jawaharImage from '../../assets/jawaharabout.jpg';
-
-import { useNavigate } from "react-router-dom";
-
+import jawaharImage from '../../assets/_MG_7280.png';
 
 const LeaderIntro = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handleViewMore = () => {
-  navigate("/about");
-};
-
+  const handleViewMore = () => {
+    navigate("/about");
+  };
 
   return (
     <div id="about" className="leader-container">
@@ -20,7 +16,7 @@ const handleViewMore = () => {
         <img
           src={jawaharImage}
           alt="Leader"
-          className="leader-image fade-slide"
+          className="leader-image "
           loading="lazy"
         />
       </div>
