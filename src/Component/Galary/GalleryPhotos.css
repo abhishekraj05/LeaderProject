@@ -31,17 +31,16 @@
 
 .___pg__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 fixed columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .___pg__item {
-  width: 100%;
-  overflow: hidden;
+  cursor: pointer;
   border-radius: 12px;
-  background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .___pg__item:hover {
@@ -57,7 +56,96 @@
   border-radius: 12px 12px 0 0;
 }
 
-/* Responsive Layout for small screens */
+/* --- Modal --- */
+.___pg__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.___pg__modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.___pg__modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ✅ Green Top-Center Close Icon */
+.___pg__modal-close.center-top {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #28a745;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+.___pg__modal-close.center-top:hover {
+  background-color: #971805;
+}
+
+/* Responsive cross size */
+@media (max-width: 600px) {
+  .___pg__modal-close.center-top {
+    font-size: 26px;
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    top: -20px;
+  }
+}
+
+
+/* --- Green Close Icon --- */
+.___pg__modal-close.green {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #28a745; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+.___pg__modal-close.green:hover {
+  background-color: #850707; /* Dark green on hover */
+}
+
+/* --- Responsive --- */
 @media (max-width: 900px) {
   .___pg__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -67,5 +155,14 @@
 @media (max-width: 600px) {
   .___pg__grid {
     grid-template-columns: 1fr;
+  }
+
+  .___pg__modal-close.green {
+    font-size: 26px;
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+    top: 10px;
+    right: 10px;
   }
 }
