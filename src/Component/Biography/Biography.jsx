@@ -1,126 +1,179 @@
-import jawaharImg from '../../assets/jawaharabout.jpg';
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Biography.css";
-const Biography = () => {
+import speech from "../../assets/p53.jpg";
+import jawaharimg from "../../assets/p51.jpg";
+
+function Biography() {
+  const [activeTab, setActiveTab] = useState("leadership");
+  const [animateBars, setAnimateBars] = useState(false);
+  const barsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setAnimateBars(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (barsRef.current) observer.observe(barsRef.current);
+    return () => {
+      if (barsRef.current) observer.unobserve(barsRef.current);
+    };
+  }, []);
+
   return (
-    <div className="bio-wrapper">
-      <div className="bio-card">
-        <div className="bio-header">
-          <h1 className="bio-title">Jawahar Lal Rai</h1>
-          <p className="bio-position">
-            Candidate for 137 – Mohiuddin Nagar Assembly Constituency (2025
-            Elections)
-          </p>
-        </div>  
+    <div className="biography-container">
+      {/* Header Section */}
+      <h1 className="title">Jawahar Lal Ray</h1>
+      <p className="description">
+        Shri Jawahar Lal Ray, a devoted and passionate leader, has always stood
+        for the welfare and upliftment of his people. Known for his dedication,
+        simplicity, and strong connection with the grassroots, he has tirelessly
+        worked to improve the quality of life for the underprivileged. With a
+        clear vision for the future and an undying love for the country, he
+        continues to inspire generations.
+      </p>
 
-        <div className="bio-section main-info">
-          <div className="bio-image-wrapper">
-            <img src={jawaharImg} alt="Jawahar Lal Rai" className="bio-image" />
-          </div>
-          <div className="bio-info">
-            <p>
-              <strong>Father’s Name:</strong> Late Chandrika Rai
-            </p>
-            <p>
-              <strong>Mother’s Name:</strong> Late Ramdulari Devi
-            </p>
-            <p>
-              <strong>Date of Birth:</strong> 5th October 1967
-            </p>
-            <p>
-              <strong>Religion:</strong> Hindu
-            </p>
-            <p>
-              <strong>Education:</strong> Intermediate
-            </p>
-            <p>
-              <strong>Profession:</strong> Politician and Social Worker
-            </p>
-            <p>
-              <strong>Permanent Address:</strong>
-              <br />
-              Village – Sahbazpur Tola,
-              <br />
-              Post – Mahammadpur Rai,
-              <br />
-              PS – Mohiuddin Nagar,
-              <br />
-              District – Samastipur, Bihar, 848502
-            </p>
-          </div>
+      {/* Banner Highlights Section */}
+      <section className="banner-highlights">
+        <div className="banner-image">
+          <img
+            className="biography-image"
+            src={jawaharimg}
+            alt="Jawahar Lal Ray Banner"
+          />
         </div>
-
-        <div className="bio-section">
-          <h2>Political Journey</h2>
-          <ul>
-            <li>
-              Began political career in 1990 as Panchayat President, served till
-              2004.
-            </li>
-            <li>Actively managed Lok Sabha elections in 1995 and 2000.</li>
-            <li>
-              Election In-Charge for Panchayat elections in 2001 and 2006 for
-              Mohiuddin Nagar block.
-            </li>
-            <li>Serving as Panchayat Mukhiya since 2006 till present.</li>
+        <div className="banner-text">
+          <h2 className="banner-title">Campaign Highlights</h2>
+          <ul className="banner-points">
+            <li>We, Tejashwi Yadav and Jawahar Lal Ray, promise this to you</li>
+            <li>Every farmer will get 200 units of free electricity per month</li>
+            <li>Social security pension will be increased from ₹400 to ₹1500</li>
+            <li>Mai Bahin Maan Yojana – ₹2500</li>
+            <li>Every promise will be fulfilled when the Tejashwi government comes</li>
+            <li>Jawahar Lal Rai – Block Head, Mohiuddin Nagar</li>
           </ul>
         </div>
+      </section>
 
-        <div className="bio-section">
-          <h2>Leadership Qualities</h2>
-          <ul>
-            <li>
-              Deep connection with grassroots citizens and rural communities.
-            </li>
-            <li>Bold decision-making and team-building capabilities.</li>
-            <li>Respected for integrity, discipline, and responsibility.</li>
-            <li>Dedicated to youth empowerment and social justice.</li>
-          </ul>
+      {/* Mission and Vision Section */}
+     <div className="mission-vision-section">
+  <div className="mission-vision-container">
+    <div className="box">
+      <div className="icon">🎯</div>
+      <h3>Mission</h3>
+      <p>
+        To develop, connect, and inspire diverse people to build strong and
+        vibrant communities.
+      </p>
+    </div>
+    <div className="box">
+      <div className="icon">👁</div>
+      <h3>Vision</h3>
+      <p>
+        To create a region where barriers of age, race, economics, and
+        education are lowered, and all citizens come to believe that they
+        live in a just and caring community.
+      </p>
+    </div>
+  </div>
+</div>
+
+      {/* Tab Section */}
+      <div className="tab-section">
+        <div className="tabs">
+          {["leadership", "passion", "objective"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={activeTab === tab ? "active" : ""}
+            >
+              {tab.toUpperCase()}
+            </button>
+          ))}
         </div>
 
-        <div className="bio-section">
-          <h2>Vision & Mission</h2>
-          <p>
-            To empower the underprivileged and build a stronger, self-reliant
-            Bihar. My mission is to bring education, employment, and healthcare
-            to every doorstep in Mohiuddin Nagar and transform our region into a
-            model of inclusive development.
-          </p>
+        <div className="tab-content">
+          {activeTab === "leadership" && (
+            <p>
+              Leadership is an action, not a position. You get the best efforts
+              from others not by lighting a fire beneath them, but by building a
+              fire within.
+            </p>
+          )}
+          {activeTab === "passion" && (
+            <p>
+              Shri Jawahar Lal Ray is passionate about uplifting rural
+              communities, ensuring every voice is heard, and every family
+              thrives.
+            </p>
+          )}
+          {activeTab === "objective" && (
+            <p>
+              To ensure equitable development, inclusive growth, and strong
+              democratic values across all sections of society.
+            </p>
+          )}
         </div>
 
-        <div className="bio-section">
-          <h2>Achievements</h2>
-          <ul>
-            <li>Led various awareness campaigns on health and sanitation.</li>
-            <li>
-              Organized multiple job camps and skill development initiatives for
-              youth.
-            </li>
-            <li>
-              Successfully resolved community disputes through peaceful
-              mediation.
-            </li>
-            <li>
-              Consistently worked to upgrade local roads, schools, and public
-              facilities.
-            </li>
-          </ul>
-        </div>
-
-        <div className="bio-section">
-          <h2>Personal Values</h2>
-          <ul>
-            <li>Honesty and transparency in leadership.</li>
-            <li>Commitment to community service above personal gain.</li>
-            <li>
-              Faith in secular, inclusive politics that respects all religions
-              and communities.
-            </li>
-          </ul>
+        <div className="image-section">
+          <img src={speech} alt="Jawahar Lal Ray" />
         </div>
       </div>
+
+
+
+      {/* Hobbies Section */}
+    <section className="hobbies-section" ref={barsRef}>
+  <h2 className="hobbies-title">Hobbies</h2>
+  <div className="hobbies-content">
+    <div className="hobbies-text">
+      <p>
+        In spite of his over-busyness, Jawahar Lal Ray Ji feels lucky to be
+        content with social programs and social service. He is also very
+        interested in tree plantation.
+      </p>
+    </div>
+
+    <div className="hobbies-bars">
+      {[
+        { label: "LEADERSHIP", color: "red", percentage: 80 },
+        { label: "KINDNESS", color: "green", percentage: 65 },
+        { label: "PASSION", color: "blue", percentage: 90 },
+      ].map(({ label, color, percentage }) => (
+        <div className="bar" key={label}>
+          <span>{label}</span>
+          <div className="progress-bar-outer">
+            <div
+              className={`progress-bar-inner ${color} ${
+                animateBars ? "animate" : ""
+              }`}
+              style={{
+                width: animateBars ? `${percentage}%` : "0%",
+                transition: "width 2s ease-in-out",
+              }}
+            ></div>
+            <span className="percentage-text">{percentage}%</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* <div className="hobbies-image-frame">
+    <img
+      src={speech}
+      alt="Jawahar Lal Ray Ji at event"
+      className="hobbies-image"
+    />
+  </div> */}
+</section>
+
     </div>
   );
-};
+}
 
 export default Biography;
