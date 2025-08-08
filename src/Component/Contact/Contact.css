@@ -1,9 +1,5 @@
 .contact-container {
   background: #ffffff;
-  padding: 80px 16px; /* Reduced side padding for mobile */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .contact-card {
@@ -79,6 +75,13 @@
   margin-bottom: 12px;
   font-size: 17px;
   color: #333;
+}
+.description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin-top: 15px;
+  padding: 0 10px;
 }
 
 /* ✅ Responsive Breakpoints */
