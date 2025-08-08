@@ -4,14 +4,16 @@ import Gallery from './Gallery'
 // import ImageSlider from '../ImageSlider/ImageSlider.jsx'
 import LeaderIntro from './About'
 import PoetryStatsSection from './PoetryStatsSection/PoetryStatsSection'
+import ReliefWorkSection from './ReliefWorkSection'
 
 const HomePage = () => {
   return (
     <>
     <LeaderIntro />
+    <ReliefWorkSection/>
     <FutureDevelopmentArea/>
-    <Gallery/>
     <PoetryStatsSection />
+    <Gallery/>
     </>
   )
 }
