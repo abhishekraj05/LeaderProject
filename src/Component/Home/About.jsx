@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const LeaderIntro = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
-  const location = useLocation(); // Detect route change
+  const location = useLocation(); 
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,16 +37,16 @@ const LeaderIntro = () => {
       }, "-=0.6");
     });
 
-    ScrollTrigger.refresh(); // Ensure correct trigger
+    ScrollTrigger.refresh();
 
     return () => {
-      ctx.revert(); // Clean up on unmount
+      ctx.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [location.pathname]); // Re-run on route change
+  }, [location.pathname]); 
 
   const handleViewMore = () => {
-    window.location.href = '/about'; // Force reload (safe way)
+    window.location.href = '/about';
   };
 
   return (

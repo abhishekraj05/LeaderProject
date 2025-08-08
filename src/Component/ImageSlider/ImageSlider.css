@@ -1,6 +1,6 @@
 /* ========== Global Reset ========== */
 html, body {
-  margin-top: 3rem;
+  margin-top: 3.6rem;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -30,6 +30,7 @@ html, body {
   background-color: #ffffff;
   pointer-events: none;
   touch-action: none;
+  margin-bottom: 2.5rem;
 }
 
 /* Hide space below slider */
@@ -62,17 +63,48 @@ html, body {
 }
 
 /* Margin for larger screens */
-@media (min-width: 1400px) {
+@media (min-width: 1300px) and (max-width: 1399px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 2;
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #ffffff;
+    pointer-events: none;
+    touch-action: none;
+    margin-bottom: 0; /* changed from 4rem */
+  }
+
   .slider-wrapper {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
+
 
 /* Remove margin on small screens */
 @media (max-width: 1399px) {
   .slider-wrapper {
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     margin-bottom: 0.5rem;
   }
 }

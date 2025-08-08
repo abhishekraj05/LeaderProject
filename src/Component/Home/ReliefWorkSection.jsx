@@ -74,7 +74,7 @@ const ReliefWorkSection = () => {
               <img
                 src={img}
                 alt={`Relief Work ${idx + 1}`}
-                className="relief-image"
+                className="relief-image  border border-success border-5 rounded-2"
               />
             </SwiperSlide>
           ))}

@@ -33,7 +33,7 @@ const ImageSlider = () => {
         {images.map((img, index) => (
           <SwiperSlide key={index}>
             <div className="slide-img-wrapper">
-              <img style={{marginBottom: "2.5rem" , userSelect: "none"}} src={img} alt={`Slide ${index + 1}`} className="slide-img" />
+              <img style={{ userSelect: "none"}} src={img} alt={`Slide ${index + 1}`} className="slide-img" />
             </div>
           </SwiperSlide>
         ))}
