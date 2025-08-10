@@ -331,4 +331,133 @@ body {
     transition: none;
     transform: none;
   }
+}/* Updated CSS with a higher max-width for large screens */
+
+/* General styles remain the same as before */
+.seva-section {
+  background: linear-gradient(135deg, #fdf5e6 0%, #fef8e7 100%);
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.seva-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #c0392b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.seva-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background-color: #e74c3c;
+  border-radius: 2px;
+}
+
+/* Updated .seva-card for better large screen handling */
+/* Updated CSS for .seva-card */
+
+.seva-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1600px; /* Increased max-width to utilize more space on large screens */
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+/* Rest of the CSS remains the same as before */
+.seva-text {
+  flex: 1;
+  min-width: 300px; /* Ensures text doesn't get too narrow */
+  font-size: 1.1rem;
+  text-align: left;
+  padding: 20px;
+}
+
+.seva-text h3 {
+  font-size: 1.8rem;
+  color: #e67e22;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.seva-text p {
+  color: #4a4a4a;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.seva-video {
+  flex: 1.5; /* Made the video take up more space on large screens */
+  max-width: 800px; /* Allowed video to grow larger */
+  min-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.seva-video:hover {
+  transform: scale(1.02);
+}
+
+/* No change in media queries */
+@media (max-width: 992px) {
+  .seva-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seva-section {
+    padding: 50px 15px;
+  }
+  
+  .seva-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 30px;
+  }
+  
+  .seva-card {
+    padding: 20px;
+  }
+  
+  .seva-text {
+    text-align: center;
+    order: 2;
+  }
+  
+  .seva-video {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seva-text h3 {
+    font-size: 1.4rem;
+  }
+  
+  .seva-text p {
+    font-size: 1rem;
+  }
 }
