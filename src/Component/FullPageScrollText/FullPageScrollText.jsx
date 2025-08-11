@@ -8,18 +8,9 @@ import p21 from "../../assets/p21.jpg";
 import p22 from "../../assets/p51.jpg";
 
 const sections = [
-  {
-    title: "Voice of the People, Strength of the Land",
-    image: p12,
-  },
-  {
-    title: "A Visionary Leader With a Mission to Serve",
-    image: p21,
-  },
-  {
-    title: "Leading With Integrity, Inspiring With Action",
-    image: p22,
-  },
+  { title: "Voice of the People, Strength of the Land", image: p12 },
+  { title: "A Visionary Leader With a Mission to Serve", image: p21 },
+  { title: "Leading With Integrity, Inspiring With Action", image: p22 },
 ];
 
 const FullPageScrollText = () => {
@@ -27,7 +18,6 @@ const FullPageScrollText = () => {
   const currentIndex = useRef(0);
   const isAnimating = useRef(false);
 
-  // ✅ Move animateTextIn to top so it's defined before use
   const animateTextIn = (index) => {
     const panels = gsap.utils.toArray(".panel");
     const heading = panels[index].querySelector("h1");
@@ -40,55 +30,73 @@ const FullPageScrollText = () => {
     );
   };
 
-  useEffect(() => {
-    const container = containerRef.current;
+  const slideTo = (index) => {
     const panels = gsap.utils.toArray(".panel");
 
+    gsap.to(panels[currentIndex.current], { yPercent: -100, duration: 1 });
+    gsap.to(panels[index], {
+      yPercent: 0,
+      duration: 1,
+      onComplete: () => {
+        animateTextIn(index);
+        currentIndex.current = index;
+        isAnimating.current = false;
+      },
+    });
+  };
+
+  useEffect(() => {
+    const panels = gsap.utils.toArray(".panel");
     gsap.set(panels, { yPercent: 100 });
     gsap.set(panels[0], { yPercent: 0 });
 
     panels.forEach((panel) => {
-      const split = new SplitType(panel.querySelector("h1"), {
-        types: "chars",
-      });
+      const split = new SplitType(panel.querySelector("h1"), { types: "chars" });
       gsap.set(split.chars, { opacity: 0, y: 50 });
     });
 
-    // ✅ This is now safe
     animateTextIn(currentIndex.current);
 
+    // Desktop scroll
     const handleScroll = (e) => {
       if (isAnimating.current) return;
-
-      isAnimating.current = true;
       const direction = e.deltaY > 0 ? 1 : -1;
       const nextIndex = currentIndex.current + direction;
-
-      if (nextIndex < 0 || nextIndex >= panels.length) {
-        isAnimating.current = false;
-        return;
-      }
-
+      if (nextIndex < 0 || nextIndex >= panels.length) return;
+      isAnimating.current = true;
       slideTo(nextIndex);
     };
 
-    const slideTo = (index) => {
-      const panels = gsap.utils.toArray(".panel");
+    // Mobile swipe
+    let touchStartY = 0;
+    let touchEndY = 0;
 
-      gsap.to(panels[currentIndex.current], { yPercent: -100, duration: 1 });
-      gsap.to(panels[index], {
-        yPercent: 0,
-        duration: 1,
-        onComplete: () => {
-          animateTextIn(index);
-          currentIndex.current = index;
-          isAnimating.current = false;
-        },
-      });
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
     };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
+    const handleTouchEnd = (e) => {
+      touchEndY = e.changedTouches[0].clientY;
+      const diff = touchStartY - touchEndY;
+      if (Math.abs(diff) > 50 && !isAnimating.current) {
+        const direction = diff > 0 ? 1 : -1;
+        const nextIndex = currentIndex.current + direction;
+        if (nextIndex >= 0 && nextIndex < panels.length) {
+          isAnimating.current = true;
+          slideTo(nextIndex);
+        }
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll, { passive: true });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
   }, []);
 
   return (

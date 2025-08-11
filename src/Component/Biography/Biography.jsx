@@ -106,7 +106,7 @@ function Biography() {
             <div className="icon">
               <FaBullseye />
             </div>
-            <h3>Mission</h3>
+            <h3 style={{color: "green"}}>Mission</h3>
             <p>
               To develop, connect, and inspire diverse people to build strong and vibrant communities.
             </p>
@@ -115,7 +115,7 @@ function Biography() {
             <div className="icon">
               <FaEye />
             </div>
-            <h3>Vision</h3>
+            <h3 style={{color: "green"}}>Vision</h3>
             <p>
               To create a region where barriers of age, race, economics, and education are lowered.
             </p>
@@ -152,7 +152,7 @@ function Biography() {
       </div>
 
       <section className="hobbies-section" ref={barsRef}>
-        <h2 className="hobbies-title">Hobbies</h2>
+        <h2 style={{color: "green"}} className="hobbies-title">Hobbies</h2>
         <div className="hobbies-content">
           <div className="hobbies-text">
             <p>
