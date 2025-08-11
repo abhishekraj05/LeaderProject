@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import LeftLeadershipVision from "./LeftLeadershipVision";
 import RightLeadershipVision from "./RightLeadershipVision";
-// import FullPageScrollText from "../FullPageScrollText/FullPageScrollText"
+import FullPageScrollText from "../FullPageScrollText/FullPageScrollText"
 import image1 from "../../assets/p28.jpg";
 import image2 from "../../assets/p39.jpg";
 import image3 from "../../assets/p20.jpg";
@@ -22,6 +22,7 @@ const fadeInVariant = (direction) => ({
 
 const LeadershipVision = () => {
   return (
+    <>
     <section className="vision-section">
       <motion.div
         variants={fadeInVariant("left")}
@@ -101,8 +102,9 @@ const LeadershipVision = () => {
         />
       </motion.div>
 
-        {/* <FullPageScrollText /> */}
     </section>
+       <FullPageScrollText /> 
+       </>
   );
 };
 

@@ -1,0 +1,108 @@
+/* Section Styling */
+.seva-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.8s ease-in-out;
+  text-align: center;
+}
+
+/* Title with Green Border */
+.seva-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: green !important;
+  margin-bottom: 40px;
+  border-bottom: 3px solid green !important;
+  display: inline-block;
+  padding-bottom: 5px;
+  animation: slideDown 0.8s ease-in-out;
+  
+}
+
+/* Card Layout */
+.seva-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Text Styling */
+.seva-text {
+  flex: 1;
+}
+
+.seva-text h3 {
+  font-size: 1.6rem;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.seva-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Video Styling */
+.seva-video {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seva-video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .seva-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .seva-text h3 {
+    font-size: 1.4rem;
+  }
+  .seva-title {
+    font-size: 1.8rem;
+  }
+  .seva-video {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .seva-title {
+    font-size: 1.5rem;
+  }
+  .seva-text p {
+    font-size: 0.95rem;
+  }
+}
