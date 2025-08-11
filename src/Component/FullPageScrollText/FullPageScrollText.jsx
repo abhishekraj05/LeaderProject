@@ -18,6 +18,10 @@ const FullPageScrollText = () => {
   const currentIndex = useRef(0);
   const isAnimating = useRef(false);
 
+  let touchStartY = 0;
+  let touchEndY = 0;
+  const swipeThreshold = 50; // minimum px move to trigger change
+
   const animateTextIn = (index) => {
     const panels = gsap.utils.toArray(".panel");
     const heading = panels[index].querySelector("h1");
@@ -30,23 +34,9 @@ const FullPageScrollText = () => {
     );
   };
 
-  const slideTo = (index) => {
-    const panels = gsap.utils.toArray(".panel");
-
-    gsap.to(panels[currentIndex.current], { yPercent: -100, duration: 1 });
-    gsap.to(panels[index], {
-      yPercent: 0,
-      duration: 1,
-      onComplete: () => {
-        animateTextIn(index);
-        currentIndex.current = index;
-        isAnimating.current = false;
-      },
-    });
-  };
-
   useEffect(() => {
     const panels = gsap.utils.toArray(".panel");
+
     gsap.set(panels, { yPercent: 100 });
     gsap.set(panels[0], { yPercent: 0 });
 
@@ -57,44 +47,61 @@ const FullPageScrollText = () => {
 
     animateTextIn(currentIndex.current);
 
-    // Desktop scroll
-    const handleScroll = (e) => {
+    const slideTo = (index) => {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
+
+      gsap.to(panels[currentIndex.current], { yPercent: -100, duration: 1 });
+      gsap.to(panels[index], {
+        yPercent: 0,
+        duration: 1,
+        onComplete: () => {
+          animateTextIn(index);
+          currentIndex.current = index;
+          setTimeout(() => {
+            isAnimating.current = false;
+          }, 300); // extra lock time
+        },
+      });
+    };
+
+    const handleWheel = (e) => {
       if (isAnimating.current) return;
       const direction = e.deltaY > 0 ? 1 : -1;
       const nextIndex = currentIndex.current + direction;
-      if (nextIndex < 0 || nextIndex >= panels.length) return;
-      isAnimating.current = true;
-      slideTo(nextIndex);
+      if (nextIndex >= 0 && nextIndex < panels.length) {
+        slideTo(nextIndex);
+      }
     };
-
-    // Mobile swipe
-    let touchStartY = 0;
-    let touchEndY = 0;
 
     const handleTouchStart = (e) => {
       touchStartY = e.touches[0].clientY;
     };
 
-    const handleTouchEnd = (e) => {
-      touchEndY = e.changedTouches[0].clientY;
-      const diff = touchStartY - touchEndY;
-      if (Math.abs(diff) > 50 && !isAnimating.current) {
-        const direction = diff > 0 ? 1 : -1;
+    const handleTouchMove = (e) => {
+      touchEndY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+      const distance = touchStartY - touchEndY;
+      if (Math.abs(distance) > swipeThreshold) {
+        const direction = distance > 0 ? 1 : -1;
         const nextIndex = currentIndex.current + direction;
         if (nextIndex >= 0 && nextIndex < panels.length) {
-          isAnimating.current = true;
           slideTo(nextIndex);
         }
       }
     };
 
-    window.addEventListener("wheel", handleScroll, { passive: true });
+    window.addEventListener("wheel", handleWheel, { passive: true });
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
-      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
