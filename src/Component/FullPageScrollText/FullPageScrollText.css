@@ -4,7 +4,6 @@
   overflow: hidden;
   position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  touch-action: none; /* Prevents unwanted browser gestures */
 }
 
 .panel {
@@ -18,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  will-change: transform;
+  transition: background-image 0.6s ease-in-out;
 }
 
 .overlay {
@@ -38,19 +37,36 @@
   margin: 0;
   line-height: 1.2;
   text-transform: uppercase;
+  border-bottom: 3px solid #00ff88; /* Green underline */
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
-  .overlay h1 { font-size: 2.6rem; }
-  .overlay { padding: 2rem; }
+  .overlay h1 {
+    font-size: 2.6rem;
+  }
+  .overlay {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .overlay h1 { font-size: 2.2rem; }
-  .overlay { padding: 1.5rem; }
+  .overlay h1 {
+    font-size: 2.2rem;
+  }
+  .overlay {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .overlay h1 { font-size: 1.8rem; }
-  .overlay { padding: 1rem; max-width: 90%; }
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+  .overlay {
+    padding: 1rem;
+    max-width: 90%;
+  }
 }
