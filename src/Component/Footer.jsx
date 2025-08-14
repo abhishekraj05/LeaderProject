@@ -58,7 +58,7 @@ const Footer = () => {
             </li>
             <li>
               <i className="fa-brands fa-youtube youtube-icon"></i>
-              <a href="">YouTube</a>
+              <a href="https://youtube.com/@pramukhmohiuddinnagar2435?feature=shared">YouTube</a>
             </li>
             <li>
               <i className="fa-brands fa-square-instagram instagram-icon"></i>
@@ -68,7 +68,11 @@ const Footer = () => {
             </li>
             <li>
               <i className="fa-brands fa-whatsapp whatsapp-icon"></i>
-              <a href="">WhatsApp</a>
+              <a
+                href="https://api.whatsapp.com/send?phone=919939819957&text=आप सबों के लिए तन मन धन और यह जीवन समर्पित-जवाहरलाल राय, प्रमुख मोहीउद्दीन नगर, जिला-समस्तीपुर, बिहार"
+              >
+                WhatsApp
+              </a>
             </li>
           </ul>
         </div>

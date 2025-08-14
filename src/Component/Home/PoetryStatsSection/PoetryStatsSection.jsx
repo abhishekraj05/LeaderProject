@@ -22,9 +22,9 @@ const poetryLines = [
 ];
 
 const stats = [
-  { icon: "🌾", value1: 10, value2: 50, suffix: "+", label: "Villages Visited" },
+  { icon: "🌾", value1: 10, value2: 150, suffix: "+", label: "Villages Visited" },
   { icon: "🧑‍🤝‍🧑", value1: 90950, value2: 100000, suffix: "+", label: "Supporters" },
-  { icon: "📢", value1: 10, value2: 25, suffix: "+", label: "Public Speeches" },
+  { icon: "📢", value1: 10, value2: 200, suffix: "+", label: "Public Speeches" },
   { icon: "✅", value1: 30, value2: 100, suffix: "+", label: "Promises Fulfilled" },
 ];
 

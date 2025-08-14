@@ -18,6 +18,10 @@ import p38 from "../../assets/p38.jpg";
 import p41 from "../../assets/p41.jpg";
 import p45 from "../../assets/p45.jpg";
 import p51 from "../../assets/p51.jpg";
+import g1 from "../../assets/g1.jpg";
+import g2 from "../../assets/g2.jpg";
+import g3 from "../../assets/g3.jpg";
+
 
 // Photo
 
@@ -26,7 +30,6 @@ import p2 from "../../assets/p2.jpg";
 import footerimg from "../../assets/footerimg.jpg";
 import b4 from "../../assets/b4.jpg";
 import b5 from "../../assets/b5.jpg";
-import p4 from "../../assets/p4.jpg";
 import p10 from "../../assets/p10.jpg";
 import p14 from "../../assets/p14.jpg";
 import p16 from "../../assets/p16.jpg";
@@ -37,11 +40,6 @@ import p23 from "../../assets/p23.jpg";
 import p24 from "../../assets/p24.jpg";
 import p28 from "../../assets/p28.jpg";
 import p29 from "../../assets/p29.jpg";
-import p30 from "../../assets/p30.jpg";
-import p31 from "../../assets/p31.jpg";
-import p32 from "../../assets/p32.jpg";
-import p33 from "../../assets/p33.jpg";
-import p34 from "../../assets/p34.jpg";
 import p36 from "../../assets/p36.jpg";
 import p39 from "../../assets/p39.jpg";
 import p40 from "../../assets/p40.jpg";
@@ -51,12 +49,26 @@ import p44 from "../../assets/p44.jpg";
 import p46 from "../../assets/p46.jpg";
 import p47 from "../../assets/p47.jpg";
 import p49 from "../../assets/p49.jpg";
+import j2 from "../../assets/j2.jpg";
+import j3 from "../../assets/j3.jpg";
+import j4 from "../../assets/j4.jpg";
+import j5 from "../../assets/j5.jpg";
+import j7 from "../../assets/j7.jpg";
+import j8 from "../../assets/j8.jpg";
 
 //News
 
 import p8 from "../../assets/p8.jpg";
 import p9 from "../../assets/p9.jpg";
 import p13 from "../../assets/p13.jpg";
+import n1 from "../../assets/n1.jpg";
+import n2 from "../../assets/n2.jpg";
+import n3 from "../../assets/n3.jpg";
+import n4 from "../../assets/n4.jpg";
+import n5 from "../../assets/n5.jpg";
+import n6 from "../../assets/n6.jpg";
+import n7 from "../../assets/n7.jpg";
+import n8 from "../../assets/n8.jpg";
 
 export const galleryData = [
   {
@@ -82,6 +94,9 @@ export const galleryData = [
       p41,
       p45,
       p51,
+      g1,
+      g2,
+      g3
     ],
   },
   {
@@ -89,12 +104,12 @@ export const galleryData = [
     title: "Photos",
     coverImage: footerimg,
     images: [
+      p46,
       p1,
       p2,
       footerimg,
       b4,
       b5,
-      p4,
       p10,
       p14,
       p16,
@@ -105,26 +120,38 @@ export const galleryData = [
       p24,
       p28,
       p29,
-      p30,
-      p31,
-      p32,
-      p33,
-      p34,
       p36,
       p39,
       p40,
       p42,
       p43,
       p44,
-      p46,
       p47,
       p49,
+      j2,
+      j3,
+      j4,
+      j5,
+      j7,
+      j8,
     ],
   },
   {
     id: "festivals",
     title: "News",
     coverImage: p13,
-    images: [p8, p9, p13],
+    images: [
+      p8, 
+      p9, 
+      p13,
+      n1,
+      n2,
+      n3,
+      n4,
+      n5,
+      n6,
+      n7,
+      n8,
+    ],
   },
 ];

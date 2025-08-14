@@ -24,7 +24,7 @@ const LeaderIntro = () => {
         <h1 className="leader-title fade-slide">Jawahar Lal Rai</h1>
         <div className="leader-separator fade-slide">༺ ❖ ༻</div>
         <p className="leader-description fade-slide">
-          Jawahar Lal Rai, a dedicated leader from Mohaddinagar, is deeply passionate about
+          Jawahar Lal Rai, a dedicated leader from Mohiuddin Nagar, is deeply passionate about
           social service, which inspired him to join the Rashtriya Janata Dal (RJD) and actively
           engage in the betterment of society through various initiatives. He has always dreamt
           of serving the nation and contributing to its development. Starting as a grassroots-level
